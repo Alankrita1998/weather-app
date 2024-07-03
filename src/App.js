@@ -7,7 +7,6 @@ import React, { useState,useEffect} from 'react';
 import useDatePicker from './useDatePicker';
 import locationheader from "./assests/locationheader.jpg";
 import datetime from "./assests/datetime.png"
-import searchicon from "./assests/searchicon.png";
 import haze from "./assests/haze.png";
 import visibility from "./assests/visibility.jpg";
 import humidity from "./assests/humidity.jpg";
@@ -16,7 +15,8 @@ import Shimmer from './Shimmer';
 import Error from './Error';
 import { getWeatherCoordinates, getWeatherByCity } from './api/weatherApi';
 
-const linkedIn = process.env.LINKEDIN;
+
+const linkedIn = process.env.REACT_APP_LINKEDIN;
 function App() {
 
   const [query, setQuery] = useState('');
@@ -77,22 +77,27 @@ function App() {
       return 'app';
     };
 
-    const weatherType = () =>{
-      if(typeof weather.main !== "undefined" && typeof weather.visibility !== "undefined" && typeof weather.weather !== "undefined" && weather.weather.length > 0) {
-        if( weather.weather[0]?.main === "Rain") {
-            return (rainicon);
-        } else if ( weather.weather[0]?.main === "Clouds"){
-            return (cloudy);
-        } else if ( weather.weather[0]?.main === "Haze"){
-          return (haze);
-        } else if (weather.weather[0]?.main === "Mist"){
-          return (mist);
-        } else if (weather.weather[0]?.main === "Sunny"){
-          return (sunny);
-        }
-      };
-      return (haze);
-    }
+    const weatherType = () => {
+      if (typeof weather.main !== "undefined" &&
+          typeof weather.visibility !== "undefined" &&
+          Array.isArray(weather.weather) && weather.weather.length > 0) {
+          
+          const mainWeather = weather.weather[0]?.main;
+  
+          const weatherIcons = {
+              Rain: rainicon,
+              Clouds: cloudy,
+              Haze: haze,
+              Mist: mist,
+              Sunny: sunny,
+          };
+  
+          return weatherIcons[mainWeather] || haze;
+      }
+  
+      return haze;
+  };
+  
 
     const loadError = () => {
       if (typeof weather.cod !== "undefined" && weather.cod === "404" && weather.message === "city not found") {
@@ -123,18 +128,16 @@ function App() {
               </div>
               
             <div  className="header-right">
-              <div>
+              <div className="locate">
                   <img className="location-img" alt="location" src={locationheader}/>
-              </div>
-              <div>
                 <h2 className="india-text">India</h2>
               </div>
             </div>
             </div>
             <div className="body">
             <div className = "search-bar">
+             {/* <img src={searchicon} alt="Search Icon" className="search-icon" /> */}
               <input className="search-input" type = "text" placeholder={"Search . . ."} onChange={e => setQuery(e.target.value)} value={query} onKeyDown ={search}  />
-              <img src={searchicon} alt="Search Icon" className="search-icon" />
           </div>
             {/* { loadError() || typeof weather.main === "undefined" ? (<Shimmer />) : ( */}
             {loading ? <Shimmer /> : (loadError() || (
@@ -180,7 +183,7 @@ function App() {
             {/*  rel="noopener noreferrer" ----->attributes are important for security and performance reason */}
             <h4>
             <a className="linkedIn"
-          href={linkedIn}
+          href={`${linkedIn}`}
           target="_blank"
           rel="noopener noreferrer"
         >
