@@ -1,38 +1,274 @@
-.App {
-  text-align: center;
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 3vh; 
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header-left{
+  font-size: larger;
+  display: flex;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.datetime-img{
+  background-color: transparent;
+  background: none;
+  border: none;
+  box-shadow: 10px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.datetime{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-evenly;
+  margin: auto;
+}
+.datetime-img, .location-img {
+  height: 4vw; 
+  width: 4vw; 
+  margin: 1vw; 
+  border-radius: 20%; 
+}
+.date{
+  font-style: italic;
+  color: rgba(235, 228, 228, 0.842);
+}
+.time{
+  font-size: xx-large;
+  color: rgba(235, 228, 228, 0.842);
+  font-weight: bold;
+  
+}
+.header-right{
+  font-size: larger;
+  display:flex;
+}
+.location-img{
+  height: 3vw; 
+  width: 3vw;
+  background-color: transparent;
+  background: none;
+  border-radius: 20%;
+  box-shadow: 10px;
+}
+.india-text{
+  color:  rgba(235, 228, 228, 0.842);
+  font-style:oblique;
+  font-weight:normal;
+}
+.search-input{
+  height: 36px;
+  width: 100%; 
+  max-width: 800px;
+  font-family:cursive;
+  display: grid;
+  font-size: 1rem;;
+  border-radius: 0px 0px 16px 16px;
+  appearance: none;
+  opacity: 60%;
+  box-shadow: 2px 8px rgba(240, 239, 239, 0.407);
+}
+
+.search-input:hover{
+  opacity: 80%;
+}
+.search-bar{
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  display: flex;
+  margin-top: 4vh;
+  margin-left: 3vw;
+}
+.search-icon {
+  position: relative;
+  right: 1vw; 
+  height: 2vw; 
+  width: 3.2vw; 
+  padding-top: 0.2vw; 
+  padding-bottom: 0.2vw; 
+  right:4%;
 }
 
-.App-link {
-  color: #61dafb;
+.app{
+  background-image: url("./assests/winternew.jpg");
+  background-size:cover;
+  transition: 0.5 ease;
+  background-position: inherit;
+}
+.app-warm{
+    background-image: url("./assests/summer.jpg");
+    background-size: cover;
+    transition: 0.5 ease;
+    background-position: inherit; 
+}
+.app-rain{
+    background-image: url("./assests/rainyroad.jpg");
+    background-size:cover;
+    transition: 0.5 ease;
+    background-position: inherit; 
+}
+main{
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.077), rgba(0, 0, 0, 0.75));
+  border-radius: 40px;
+  margin: 0 8%;
+  max-width: 100%; 
+  box-sizing: border-box; 
+  height:max-content; 
+  padding: 0.8% 5.6%; 
+  box-sizing: border-box;
+  align-items: center;
+}
+.location{
+  color: rgba(235, 228, 228, 0.842);
+  text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-style:normal;
+  font-weight:400;
+  font-size: 2.8vw; 
+  margin: 2.8% auto; 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.temp{
+  color: rgba(235, 228, 228, 0.842);
+  justify-content: center;
+  position: relative;
+  display: flex;
+  margin: 3.6% 2%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+
+  color: #FFF;
+  font-weight: 900;
+
+  text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
+  text-align: center;
+  box-shadow: 6px 6px rgba(0, 0, 0, 0.2);
+  font-size: 5.6rem; 
+  padding: 1.2% 2%; 
+}
+.weather-container{
+  height: 30vh;
+  width: 18vw; 
+  border: 2px #151414;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin:1% 0%;
+  background-color: black;
+  border-radius: 16px;
+  justify-content: center;
+  perspective: 1000px;
+}
+.linkedIn{
+  font-size: medium;
+  font-style:italic ;
+}
+.last-section-header{
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  display: flex;
+  gap: 110px;
+}
+.title{
+  color:  rgba(235, 228, 228, 0.842);
+  font-size: larger;
+  font-family: 'Times New Roman', Times, serif;
+  padding: 10px;
+
+}
+.weather-title{
+  text-align: center;
+  color:  rgba(235, 228, 228, 0.842);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: large;
+  padding-top: 1vh;
+}
+.title-img{
+  height: 50px;
+  width: 50px;
+  box-shadow: 2px 2px;
+  padding: 24%;
+  opacity:100%;
+
+}
+.weather-title-img{
+  height: 120px;
+  width: 120px;
+  box-shadow: 10px;
+  transition: transform 0.5s;
+  margin: 0px 30%;
+  border-radius: 12px;
+  justify-content: center;
+}
+.last-section{
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  display: flex;
+  gap: 120px; 
+}
+.parameter-data{
+  font-size: 28px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  color:  rgba(235, 228, 228, 0.842);
+  justify-content: center;
+}
+.parameter-container{
+  justify-content: center;
+}
+.main-data{
+  font-size: 30px;
+  font-family:'Times New Roman', Times, serif;
+  font-weight: bold;
+  color:  rgba(235, 228, 228, 0.842);
+  justify-content: center;
+}
+.main-box{
+  display:flex;
+  justify-content: space-evenly;
+  margin: 1% ;
+}
+.footer{
+  display: flex;
+  position:sticky;
+  justify-content: center;
+  text-align: center;
+  margin: 0% 32%;
+  font-family:monospace;
+  font-style: italic;
+  color: #b6a7a7bc;
+  width: auto;
+}
+.linkedIn{
+  color: #5386a0;
+}
+.vertical-line {
+  width: 2px; 
+  background-color: #dcd5d5; 
+  box-shadow: 0 0 5px rgba(0, 0, 0, 1.2); 
+  height: 14vw; 
+  margin: 1vw 5vw; 
+}
+.shimmer-container{
+  font-style:inherit;
+  font-size: 2rem;
+  margin: 30% 40%;
+  justify-content: center;
+  text-align: center;
+  font-weight: 1px;
+  font-family:'Times New Roman', Times, serif;
+  color: rgb(233, 238, 241);
+  text-shadow: #090909 8rem;
+}
+.error-text{
+  font-size: 3.2rem;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: lighter;
+  color: #dad0d0;
+  text-align: center;
+  margin: 20% 0%;
+  max-height: max-content;
+
 }
