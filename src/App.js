@@ -14,14 +14,9 @@ import humidity from "./assests/humidity.jpg";
 import wind from "./assests/wind.jpg";
 import Shimmer from './Shimmer';
 import Error from './Error';
+import { getWeatherCoordinates, getWeatherByCity } from './api/weatherApi';
 
-
-
-const api = {
-  key : "8e1430b18afd134a0e24879f710044eb",
-  base : "https://api.openweathermap.org/data/2.5/"
-}
-
+const linkedIn = process.env.LINKEDIN;
 function App() {
 
   const [query, setQuery] = useState('');
@@ -35,8 +30,7 @@ function App() {
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
       try {
-        const response = await fetch(`${api.base}weather?lat=${latitude}&lon=${longitude}&units=metric&APPID=${api.key}`);
-        const result = await response.json();
+        const result = await getWeatherCoordinates(latitude, longitude);
         setWeather(result);
         setLoading(false);
       } catch (error) {
@@ -55,8 +49,7 @@ function App() {
           return;
         }
         try {
-          const response = await fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`);
-          const result = await response.json();
+          const result = await getWeatherByCity(query);
           setWeather(result);
           setQuery('');
         } catch (error) {
@@ -187,7 +180,7 @@ function App() {
             {/*  rel="noopener noreferrer" ----->attributes are important for security and performance reason */}
             <h4>
             <a className="linkedIn"
-          href="https://www.linkedin.com/in/alankrita-mohapatra/"
+          href={linkedIn}
           target="_blank"
           rel="noopener noreferrer"
         >
