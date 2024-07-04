@@ -37,10 +37,27 @@ function App() {
         setWeather({ cod: 404, message: "city not found" });
         setLoading(false);
       }
-    });
+    },
+    error => {
+      console.error('Location access denied:', error);
+      fetchWeatherForBangalore();
+    }
+  );
   },3000);
   return () => clearTimeout(timer);
   }, []);
+
+  const fetchWeatherForBangalore = async () => {
+    try {
+      const result = await getWeatherByCity('Bangalore');
+      setWeather(result);
+      setLoading(false);
+    } catch (error) {
+      setWeather({ cod: 404, message: "city not found" });
+      setLoading(false);
+    }
+  };
+
 
     const search = async (evt) => {
       if (evt.key === "Enter") {
