@@ -79,7 +79,7 @@ function App() {
 
     const weatherConditions = () => {
       if (typeof weather.main !== "undefined" && typeof weather.visibility !== "undefined" && typeof weather.weather !== "undefined" && weather.weather.length > 0) {
-        if ( weather.weather[0]?.main === "Rain" || weather.weather[0]?.main === "Mist") {
+        if ( weather.weather[0]?.main === "Rain" || weather.weather[0]?.main === "Mist" || weather.weather[0]?.main === "Drizzle") {
           return 'app-rain';
         }
         else{
@@ -107,6 +107,7 @@ function App() {
               Haze: haze,
               Mist: mist,
               Sunny: sunny,
+              Drizzle: rainicon
           };
   
           return weatherIcons[mainWeather] || haze;
@@ -153,7 +154,6 @@ function App() {
             </div>
             <div className="body">
             <div className = "search-bar">
-             {/* <img src={searchicon} alt="Search Icon" className="search-icon" /> */}
               <input className="search-input" type = "text" placeholder={"Search . . ."} onChange={e => setQuery(e.target.value)} value={query} onKeyDown ={search}  />
           </div>
             {/* { loadError() || typeof weather.main === "undefined" ? (<Shimmer />) : ( */}
@@ -174,22 +174,25 @@ function App() {
             <div className="last-section-header">
                 <div className='parameter-container'>
                 <img className="title-img" alt="weather" src={visibility}/>
-                    <div className = "title">Visibility :</div>
+                    <div className = "title">Visibility</div>
+                    <div className = "parameter-data">{weather.visibility} m</div>
                 </div>
                 <div className='parameter-container'>
                 <img className="title-img" alt="weather" src={humidity}/>
-                    <div className= "title">Humidity :</div>
+                    <div className= "title">Humidity</div>
+                    <div className= "parameter-data">{weather.main?.humidity} %</div>
                 </div>
                 <div className='parameter-container'>
                 <img className="title-img" alt="weather" src={wind}/>
-                    <div className= "title">Wind Speed :</div>
+                    <div className= "title">Wind Speed</div>
+                    <div className= "parameter-data">{weather.wind?.speed} Km/h</div>
                 </div>
             </div>
-            <div className="last-section">
+            {/* <div className="last-section">
               <div className = "parameter-data">{weather.visibility} m</div>
               <div className= "parameter-data">{weather.main?.humidity} %</div>
               <div className= "parameter-data">{weather.wind?.speed} Km/h</div>
-            </div>
+            </div> */}
           </div>
           </div>
           </div>
