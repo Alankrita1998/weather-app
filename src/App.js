@@ -194,13 +194,13 @@ function App() {
                     <div className = "title">Visibility</div>
                     <div className = "parameter-data">{weather.visibility} m</div>
                 </div>
-                <div className="vertical-line"></div>
+                {/* <div className="vertical-line"></div> */}
                 <div className='parameter-container'>
                 <img className="title-img" alt="weather" src={humidity}/>
                     <div className= "title">Humidity</div>
                     <div className= "parameter-data">{weather.main?.humidity} %</div>
                 </div>
-                <div className="vertical-line"></div>
+                {/* <div className="vertical-line"></div> */}
                 <div className='parameter-container'>
                 <img className="title-img" alt="weather" src={wind}/>
                     <div className= "title">Wind Speed</div>

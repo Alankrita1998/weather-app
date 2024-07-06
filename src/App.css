@@ -542,7 +542,7 @@ main{
   .main-box{
     display:flex;
     justify-content:flex-start;
-    gap: 3%;
+    gap: 5%;
     margin: 10% 2%;
     max-width: 100%;
     width: 86vw;
@@ -599,8 +599,8 @@ main{
     align-items:center;
     flex-direction: row;
     display: flex;
-    width: 58vw;
-    margin: 0% 4%;
+    width: 54vw;
+    margin: 0% 5%;
   }
   /* .last-section{
     justify-content: space-between;
@@ -613,7 +613,7 @@ main{
     font-size: 0.6rem;
     font-family: 'Times New Roman', Times, serif;
     padding: 8% 0%;
-    column-gap: 3%;
+    column-gap: 2%;
   }
   .title-img{
   height: 4.4vh;
@@ -623,7 +623,7 @@ main{
 
 }
 .parameter-data{
-  font-size: 0.68rem;
+  font-size: 0.78rem;
   font-family: 'Times New Roman', Times, serif;
   font-weight: bold;
   color:  rgba(235, 228, 228, 0.842);
