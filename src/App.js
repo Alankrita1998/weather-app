@@ -204,7 +204,7 @@ function App() {
                 {/* <div className="vertical-line"></div> */}
                 <div className='parameter-container'>
                 <img className="title-img" alt="weather" src={wind}/>
-                    <div className= "title">Wind Speed</div>
+                    <div className= "title">Wind</div>
                     <div className= "parameter-data">{weather.wind?.speed} km/h</div>
                 </div>
             </div>
