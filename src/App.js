@@ -183,7 +183,7 @@ function App() {
             <div className = "main-box">
             <div className='weather-container'>
                    <img className="weather-title-img" alt="weather" src={weatherType()}/>
-                   <div className = "weather-title">Weather-type :</div>
+                   <div className = "weather-title">Weather-type</div>
                    <div className = "main-data">{weather.weather?.[0]?.main}</div>
             </div>
 
