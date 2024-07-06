@@ -118,23 +118,24 @@ function App() {
       }
   
       return haze;
-  };
+      };
   
 
-    const loadError = () => {
-      if (typeof weather.cod !== "undefined" && weather.cod === "404" && weather.message === "city not found") {
-        return <Error />;
-      }else if( weather === null){
+      const loadError = () => {
+        if (typeof weather.cod !== "undefined" && weather.cod === "404" && weather.message === "city not found") {
+          return <Error />;
+        }else if( weather === null){
 
+        }
+        return null;
       }
-      return null;
-    }
 
     return (
     <div className='main-app'>
       <div className="nav-items">
-            <div>
+            <div className='logo-container'>
               <img className="logo" alt="logo" src={tablogo}/>
+              <div style={{color: "lightgrey",fontFamily: "cursive"}}>SkyCast</div>
             </div>
             {/*  rel="noopener noreferrer" ----->attributes are important for security and performance reason */}
             <div>
@@ -147,7 +148,7 @@ function App() {
             </div>
 
          </div>
-    <div className={weatherConditions()}>
+      <div className={weatherConditions()}>
       <div className="main-container">
 
       {/* <main> : it helps improve both SEO and website accessibility by clearly defining where the main content begins. This makes it easier for search engine algorithms an  d screen readers to interpret your site. */}
@@ -221,8 +222,8 @@ function App() {
           
       </main>
       </div>    
-    </div>
-    <div className="footer">
+      </div>
+      <div className="footer">
             {/*  rel="noopener noreferrer" ----->attributes are important for security and performance reason */}
             <h4>
             <a className="linkedin"
