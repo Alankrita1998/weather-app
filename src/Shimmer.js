@@ -4,11 +4,11 @@ import { TailSpin } from 'react-loader-spinner'
 
 const Shimmer = () => {
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '76vh' }}>
+    <div className="shimmer-container">
     (<TailSpin
   visible={true}
-  height="80"
-  width="80"
+  height="60"
+  width="60"
   color="#f0f0f0"
   backgroundColor="transparent"
   ariaLabel="tail-spin-loading"

@@ -13,6 +13,9 @@ import humidity from "./assests/humidity.jpg";
 import wind from "./assests/wind.jpg";
 import Shimmer from './Shimmer';
 import Error from './Error';
+import settingicon from './assests/settingicon.png';
+import menuicon from './assests/menuicon.png';
+import tablogo from './assests/tablogo.jpg';
 import { getWeatherCoordinates, getWeatherByCity } from './api/weatherApi';
 
 
@@ -107,7 +110,8 @@ function App() {
               Haze: haze,
               Mist: mist,
               Sunny: sunny,
-              Drizzle: rainicon
+              Drizzle: rainicon,
+              Smoke: cloudy
           };
   
           return weatherIcons[mainWeather] || haze;
@@ -126,12 +130,26 @@ function App() {
       return null;
     }
 
-
-
-
-
     return (
+    <div className='main-app'>
+      <div className="nav-items">
+            <div>
+              <img className="logo" alt="logo" src={tablogo}/>
+            </div>
+            {/*  rel="noopener noreferrer" ----->attributes are important for security and performance reason */}
+            <div>
+              <button className="setting">
+                <img className="img" alt="mode "src={settingicon}/>
+              </button>
+              <button  className="menu">
+                <img  className="img" alt="menu "src={menuicon}/>
+              </button>
+            </div>
+
+         </div>
     <div className={weatherConditions()}>
+      <div className="main-container">
+
       {/* <main> : it helps improve both SEO and website accessibility by clearly defining where the main content begins. This makes it easier for search engine algorithms an  d screen readers to interpret your site. */}
       <main>
           <div className="header">
@@ -152,14 +170,14 @@ function App() {
               </div>
             </div>
             </div>
-            <div className="body">
+            <div className="sub-main">
             <div className = "search-bar">
               <input className="search-input" type = "text" placeholder={"Search . . ."} onChange={e => setQuery(e.target.value)} value={query} onKeyDown ={search}  />
           </div>
             {/* { loadError() || typeof weather.main === "undefined" ? (<Shimmer />) : ( */}
             {loading ? <Shimmer /> : (loadError() || (
             
-             <div>
+             <div className= "data">
             <div className = "location">{"📌"} {weather.name}, {weather.sys?.country}</div>
             <div className="temp">  {Math.round(weather.main?.temp)}° C</div>
             <div className = "main-box">
@@ -168,7 +186,6 @@ function App() {
                    <div className = "weather-title">Weather-type :</div>
                    <div className = "main-data">{weather.weather?.[0]?.main}</div>
             </div>
-            <div className="vertical-line"></div>
 
             <div className="other-parameters">
             <div className="last-section-header">
@@ -177,15 +194,17 @@ function App() {
                     <div className = "title">Visibility</div>
                     <div className = "parameter-data">{weather.visibility} m</div>
                 </div>
+                <div className="vertical-line"></div>
                 <div className='parameter-container'>
                 <img className="title-img" alt="weather" src={humidity}/>
                     <div className= "title">Humidity</div>
                     <div className= "parameter-data">{weather.main?.humidity} %</div>
                 </div>
+                <div className="vertical-line"></div>
                 <div className='parameter-container'>
                 <img className="title-img" alt="weather" src={wind}/>
                     <div className= "title">Wind Speed</div>
-                    <div className= "parameter-data">{weather.wind?.speed} Km/h</div>
+                    <div className= "parameter-data">{weather.wind?.speed} km/h</div>
                 </div>
             </div>
             {/* <div className="last-section">
@@ -199,10 +218,14 @@ function App() {
             )
           )};
            </div>
-          <div className="footer">
+          
+      </main>
+      </div>    
+    </div>
+    <div className="footer">
             {/*  rel="noopener noreferrer" ----->attributes are important for security and performance reason */}
             <h4>
-            <a className="linkedIn"
+            <a className="linkedin"
           href={`${linkedIn}`}
           target="_blank"
           rel="noopener noreferrer"
@@ -212,8 +235,6 @@ function App() {
         </h4>
 
           </div>
-      </main>
-              
     </div>);
 }
 
