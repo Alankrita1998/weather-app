@@ -1,0 +1,1 @@
+export const ICON = "https://openweathermap.org/img/wn/";

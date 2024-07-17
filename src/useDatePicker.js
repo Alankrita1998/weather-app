@@ -25,9 +25,8 @@ const useDatePicker = () => {
       setFormattedDate(formattedDate);
       setFormattedTime(formattedTime); 
 
-    }, 1000); // Update every second
+    }, 1000); 
 
-    // Clean up interval on component unmount
     return () => clearInterval(interval);
   }, []);
 

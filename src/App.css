@@ -49,6 +49,50 @@
   font-size: larger;
   display:flex;
 }
+.title-forecast{
+  font-size: medium;
+  text-transform: uppercase;
+  color: white;
+  margin: auto;
+  padding-left: 2%;
+  font-family:'Times New Roman', Times, serif ;
+  word-spacing: 1vw;
+}
+.forecast-container{
+  margin: 3% 0%;
+}
+.scrollable-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+}
+.datewise-data{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+.w-time,.w-date{
+  font-size: small;
+  font-weight: lighter;
+  display: flex;
+  justify-content: center;
+}
+.w-icon{
+  width: 4vw;
+  height: 7vh;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+.w-temp{
+  font-size: small;
+  font-weight: lighter;
+  display: flex;
+  justify-content: center;
+}
 .location-img{
   height: 3vw; 
   width: 3vw;
@@ -143,7 +187,14 @@ main{
   box-sizing: border-box;
   align-items: center;
 }
-
+.datewise-data{
+  font-size: 0.9rem;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  color:  rgba(235, 228, 228, 0.842);
+  text-decoration: none;
+  justify-content: center;
+}
 .location{
   color: rgba(235, 228, 228, 0.842);
   text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
@@ -206,6 +257,7 @@ main{
   flex-direction: row;
   display: flex;
   text-align: center;
+  width: 40vw;
 }
 .title{
   color:  rgba(235, 228, 228, 0.842);
@@ -263,7 +315,7 @@ main{
 .main-box{
   display:flex;
   justify-content: space-evenly;
-  margin: 1% ;
+  margin: 2% ;
 }
 .other-parameters{
   margin: 2.8% 0%;
@@ -287,13 +339,16 @@ main{
   margin: 0% 0%;
   box-shadow: 6px 6px rgba(128, 125, 125, 0.08);
 }
-.setting, .menu {
+.setting {
   background-color: hsl(0, 1%, 16%);
-  padding: 3% 0%;
+  width: 4vw;
+  height: 8vh;
+  margin-right: 7%;
+  padding: 0% 3%;
 }
 .img{
   height: 6vh; /* Adjusted height for consistency */
-  width: 4.2vw; /* Adjusted width for consistency */
+  width: 4vw; /* Adjusted width for consistency */
   background: none;
   border: none;
   justify-content: center; /* Centers content horizontally */
@@ -346,7 +401,7 @@ main{
     background-size:cover;
     transition: background-image 0.5s ease-in-out;
     background-position:center;
-    height: 100vh;
+    height: 110vh;
   }
   .sub-main{
     display: flex;
@@ -371,14 +426,14 @@ main{
       background-size: cover;
       transition: background-image 0.5s ease-in-out;
       background-position:center;
-      height: 100vh;
+      height: 110vh;
   }
   .app-rain{
       background-image: url("./assests/rainyroad.jpg");
       background-size:cover;
       transition: background-image 0.5s ease-in-out;
       background-position:center;
-      height: 100vh;
+       height: 110vh;
   }
   .nav-items > ul {
     display: flex;
@@ -495,13 +550,15 @@ main{
     font-size: 1rem;
   }
   .search-bar {
-    position: sticky;
+    position: relative;
     top: 10vh; /* Adjust top position to create a 10% gap from the top */ /* Center horizontally */
-    left: 21%;
+    /* left: 21%; */
     display: flex;
     justify-content: center;
-    margin-top: 1vh;
-    margin-bottom: 6vh; /* Adjust margin to maintain gap from the div below */
+    text-align: center;
+    align-items: center;
+    margin-top: 0vh;
+    margin-bottom: 10vh; /* Adjust margin to maintain gap from the div below */
     width: 58vw; /* Set the width to control its size */
     max-width: 90%; /* Limit maximum width */
     z-index: 1000; /* Ensure it's above other content */
@@ -524,12 +581,9 @@ main{
     background-position: right 3% center; 
     background-size: 12%; 
     transition: opacity 0.2s ease;
-    position: sticky;
+    position: relative;
   } 
-  .search-bar{
-    margin-top: 0vh;
-    position: sticky;
-  }
+
   .data{
     position: sticky;
   }
@@ -607,7 +661,7 @@ main{
     height: 6vh;
   }
   .last-section-header{
-    justify-content: space-between;
+    justify-content: space-around;
     position: relative;
     align-items:self-end;
     flex-direction: row;
@@ -684,9 +738,9 @@ main{
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  height: max-content;
   width: 100vw;
-  padding: 16% 0%;
+  padding: 10% 0%;
 }
 
 .error-text{
@@ -699,16 +753,113 @@ main{
   max-height: 58vh;
 
 }
-.setting, .menu {
+.setting{
   background-color: hsl(0, 1%, 16%);
   padding: 3% 0%;
+  width: 9vw;
 }
 .img{
   height: 5vh; /* Adjusted height for consistency */
-  width: 7.2vw; /* Adjusted width for consistency */
+  width: 3vw; /* Adjusted width for consistency */
   background: none;
   border: none;
   justify-content: center; /* Centers content horizontally */
   display: flex;
 }
+.datewise-data{
+  font-size: 0.9rem;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  color:  rgba(235, 228, 228, 0.842);
+  text-decoration: none;
+  justify-content: center;
+}
+.w-icon{
+  width: 8vw;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+.title-forecast{
+  font-size: small;
+  text-transform: uppercase;
+  color: white;
+  margin: auto;
+  word-spacing: 2vw;
+}
+.w-time{
+  font-size: small;
+  font-weight: lighter;
+  display: flex;
+  width: min-content;
+  justify-content: center;
+}
+.w-date{
+  font-size: small;
+  font-weight: lighter;
+  display: flex;
+  justify-content: center;
+  width: 8vw;
+}
+}
+@media only screen and (max-device-width: 400px){
+  .w-date{
+    font-size: small;
+    font-weight: lighter;
+    display: flex;
+    width: 9vw;
+    justify-content: center;
+  }
+  .parameter-data{
+    font-size: 0.8rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color:  rgba(235, 228, 228, 0.842);
+    text-decoration: none;
+    justify-content: center;
+  }
+}
+@media only screen and (max-device-width: 768px){
+  .logo{
+    height: 4vh;
+    width: 14vw;
+    margin: 20% 40%;
+    justify-content: center;
+    border-radius: 50%;
+    background:none;
+    opacity: 80%;
+  }
+  .datetime-img{
+    width: 7vw;
+    height: 5vh; 
+  }
+  .location-img{
+    width: 6vw;
+    height: 4vh; 
+  }
+  .date{
+    font-style: italic;
+    font-size: 1rem;
+    color: rgba(235, 228, 228, 0.842);
+  }
+  .time{
+    font-size: 1rem;
+    color: rgba(235, 228, 228, 0.842);
+    font-weight: bold;
+    display: flex;
+    
+  }
+  .locate{
+    display: flex;
+    flex-direction: row;
+    font-size: 1.6rem;
+    justify-content: space-around;
+  }
+  .india-text{
+    color:  rgba(235, 228, 228, 0.842);
+    font-style:oblique;
+    font-weight:normal;
+    font-size: 1rem;
+  }
 }

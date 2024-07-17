@@ -19,3 +19,22 @@ export const getWeatherByCity = async (city) => {
     throw new Error('Failed to fetch weather data');
   }
 };
+
+export const getWeatherByTime = async (city) => {
+  try {
+    const response = await fetch(`${baseUrl}forecast?q=${city}&appid=${apiKey}`);
+    return await response.json();
+  } catch (error) {
+    throw new Error('Failed to fetch weather data');
+  }
+};
+
+// api.openweathermap.org/data/2.5/forecast/daily?q={city name}&cnt={cnt}&appid={API key}
+export const getDailyweather= async (latitude,longitude) => {
+  try {
+    const response = await fetch(`${baseUrl}forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}`);
+    return await response.json();
+  } catch (error) {
+    throw new Error('Failed to fetch weather data');
+  }
+};
