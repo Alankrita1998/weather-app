@@ -46,7 +46,7 @@ const Forecast = ({ dailyForecast }) => {
         <div className="scrollable-container">
           {nextFiveHourlyForecasts.map((forecast, index) => (
             <div key={index} className="datewise-data">
-              <p className='w-time'>{new Date(forecast.dt_txt).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</p>
+              <p className='w-time'>{new Date(forecast.dt_txt).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit',hour12: true})}</p>
               <img className="w-icon" alt="icon" src={ ICON + forecast.weather[0].icon + ".png"}  /> 
               <p className='w-temp'>{kelvinToCelsius(forecast.main.temp)}°C</p>
             </div>
