@@ -21,7 +21,7 @@ const Forecast = ({ dailyForecast }) => {
     const dailyForecasts = {};
     dailyForecast.forEach((forecast) => {
       const forecastDate = new Date(forecast.dt_txt);
-      const date = forecastDate.toLocaleDateString('en-US', {
+      const date = forecastDate.toLocaleDateString('en-IN', {
         day: 'numeric',
         month: 'short',
         weekday: 'short'
