@@ -401,7 +401,7 @@ main{
     background-size:cover;
     transition: background-image 0.5s ease-in-out;
     background-position:center;
-    height: 140vh;
+    height: 130vh;
   }
   .sub-main{
     display: flex;
@@ -426,14 +426,14 @@ main{
       background-size: cover;
       transition: background-image 0.5s ease-in-out;
       background-position:center;
-      height: 140vh;
+      height: 130vh;
   }
   .app-rain{
       background-image: url("./assests/rainyroad.jpg");
       background-size:cover;
       transition: background-image 0.5s ease-in-out;
       background-position:center;
-       height: 140vh;
+       height: 130vh;
   }
   .nav-items > ul {
     display: flex;
@@ -557,8 +557,8 @@ main{
     justify-content: center;
     text-align: center;
     align-items: center;
-    margin-top: 0vh;
-    margin-bottom: 10vh; /* Adjust margin to maintain gap from the div below */
+    margin-top: 5vh;
+    margin-bottom: 12vh; /* Adjust margin to maintain gap from the div below */
     width: 58vw; /* Set the width to control its size */
     max-width: 90%; /* Limit maximum width */
     z-index: 1000; /* Ensure it's above other content */
@@ -681,7 +681,7 @@ main{
     align-items: center;
     flex-direction: row;
     width: 5vw;
-    margin: 1% 0%;
+    margin: 1% 2%;
   }
   .title{
     color:  rgba(235, 228, 228, 0.842);
@@ -861,5 +861,13 @@ main{
     font-style:oblique;
     font-weight:normal;
     font-size: 1rem;
+  }
+  .parameter-data{
+    font-size: 0.8rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color:  rgba(235, 228, 228, 0.842);
+    text-decoration: none;
+    justify-content: center;
   }
 }
