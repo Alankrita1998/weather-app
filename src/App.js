@@ -70,6 +70,15 @@ function App() {
       const result = await getWeatherByCity("Bangalore");
       setWeather(result);
       setLoading(false);
+      try {
+        // const position = await getCurrentPosition();
+        // const { latitude, longitude } = position.coords;
+        const dailyForecastData = await getWeatherByTime("Bangalore");
+        setDailyForecast(dailyForecastData.list);
+    } catch(error){
+      setDailyForecast({ cod: 404, message: "city not found" });
+      setLoading(true);
+    }
     } catch (error) {
       setWeather({ cod: 404, message: "city not found" });
       setLoading(false);
