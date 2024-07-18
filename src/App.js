@@ -183,7 +183,7 @@ function App() {
       <div className="nav-items">
         <div className="logo-container">
           <img className="logo" alt="logo" src={tablogo} />
-          <div style={{ color: "lightgrey", fontFamily: "cursive" }}>
+          <div style={{ color: "lightgrey", fontFamily:"fantasy",fontWeight: "lighter" }}>
             SkyCast
           </div>
         </div>
