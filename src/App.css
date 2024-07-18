@@ -681,7 +681,7 @@ main{
     align-items: center;
     flex-direction: row;
     width: 5vw;
-    margin: 1% 6%;
+    margin: 1% 2%;
   }
   .title{
     color:  rgba(235, 228, 228, 0.842);
