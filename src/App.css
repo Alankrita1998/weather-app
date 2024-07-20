@@ -29,9 +29,9 @@
   justify-content: space-evenly;
   margin: auto;
 }
-.datetime-img, .location-img {
-  height: 4vw; 
-  width: 4vw; 
+.datetime-img {
+  height: 5vh; 
+  width: 3vw; 
   margin: 1vw; 
   border-radius: 20%; 
 }
@@ -87,13 +87,15 @@
   justify-content: center;
 }
 .location-img{
-  height: 6vh; 
-  width: 3vw;
+  height: 5vh; 
+  width: 2.4vw;
   background-color: transparent;
   background: none;
   border-radius: 20%;
   box-shadow: 10px;
   justify-content: space-around;
+  margin: 1vw 0.8vw;
+  border-radius: 20%; 
 }
 .locationbody{
   height: 5vh; 
@@ -115,6 +117,7 @@
   color:  rgba(235, 228, 228, 0.842);
   font-style:oblique;
   font-weight:normal;
+  font-size:1.2rem;
 }
 .search-input{
   height: 5vh;
@@ -160,7 +163,7 @@
   margin: 1% 0%;
 }
 .app{
-  background-image: url("./assests/winternew.jpg");
+  background-image: url("./assests/winters.jpg");
   background-size:cover;
   transition: background-image 0.2s ease-in-out;
   background-position: inherit;
@@ -641,7 +644,19 @@ main{
   }
 }
 
-
+@media only screen and (max-device-width:320px){
+  .date{
+    font-size: 0.8rem;
+  }
+  .time{
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: flex;
+  }
+  .india-text{
+    font-size: 0.8rem;
+  }
+}
 
 @media only screen and (min-device-width:480px) and (max-device-width: 1024px){
     .logo{
@@ -690,7 +705,7 @@ main{
       margin: 4% auto; 
     }
     .app{
-      background-position:right;
+      background-position:center;
       height: 150vh;
     }
     .app-rain{
