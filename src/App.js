@@ -13,6 +13,7 @@ import visibility from "./assests/visibility.jpg";
 import wind from "./assests/wind.jpg";
 import Shimmer from "./Shimmer";
 import Error from "./Error";
+import locate from "./assests/locationpin.png";
 // import pressure from "./assests/pressure.png";
 import tablogo from "./assests/tablogo.jpg";
 import Forecast from './Forecast';
@@ -247,7 +248,8 @@ function App() {
                   <div>
                     <div className="data">
                       <div className="location">
-                        {"📌"} {weather.name}, {weather.sys?.country}
+                        <img className="locationbody" src={locate}/>
+                        {weather.name}, {weather.sys?.country}
                       </div>
                       <div className="temp">
                         {" "}
