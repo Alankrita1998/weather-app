@@ -14,7 +14,6 @@ import wind from "./assests/wind.jpg";
 import Shimmer from "./Shimmer";
 import Error from "./Error";
 import locate from "./assests/locationpin.png";
-// import pressure from "./assests/pressure.png";
 import tablogo from "./assests/tablogo.jpg";
 import Forecast from './Forecast';
 import { getWeatherCoordinates, getWeatherByCity ,getDailyweather,getWeatherByTime} from "./api/weatherApi";
@@ -34,10 +33,6 @@ function App() {
           const latitude = position.coords.latitude;
           const longitude = position.coords.longitude;
       try {
-        // const position = await getCurrentPosition();
-        // const latitude = position.coords.latitude;
-        // const longitude = position.coords.longitude;
-
         const weatherData = await getWeatherCoordinates(latitude, longitude);
         setWeather(weatherData);
         
@@ -54,139 +49,118 @@ function App() {
       console.error('Location access denied:', error);
       fetchWeatherForBangalore();
       }
-  );
-  },3000);
-  return () => clearTimeout(timer);
-}, []);
+      );
+      },3000);
+      return () => clearTimeout(timer);
+    }, []);
 
-
-  // const getCurrentPosition = () => {
-  //   return new Promise((resolve, reject) => {
-  //     navigator.geolocation.getCurrentPosition(resolve, reject);
-  //   });
-  // };  
-  
-  const fetchWeatherForBangalore = async () => {
-    try {
-      const result = await getWeatherByCity("Bangalore");
-      setWeather(result);
-      setLoading(false);
-      try {
-        // const position = await getCurrentPosition();
-        // const { latitude, longitude } = position.coords;
-        const dailyForecastData = await getWeatherByTime("Bangalore");
-        setDailyForecast(dailyForecastData.list);
-    } catch(error){
-      setDailyForecast({ cod: 404, message: "city not found" });
-      setLoading(true);
-    }
-    } catch (error) {
-      setWeather({ cod: 404, message: "city not found" });
-      setLoading(false);
-    }
-  };
-
-  // const fetchWeatherByTime = async () => {
-  //   try {
-  //     const result = await getWeatherByTime("Bangalore");
-  //     // setWeather(result);
-  //     console.log(result);
-  //     setLoading(false);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
     
-
-  const search = async (evt) => {
-    if (evt.key === "Enter") {
-      if (query.trim() === "") {
-        alert("Please enter a city.");
-        return;
-      }
+    const fetchWeatherForBangalore = async () => {
       try {
-        const result = await getWeatherByCity(query);
+        const result = await getWeatherByCity("Bangalore");
         setWeather(result);
-        setQuery("");
+        setLoading(false);
         try {
-            // const position = await getCurrentPosition();
-            // const { latitude, longitude } = position.coords;
-            const dailyForecastData = await getWeatherByTime(query);
-            setDailyForecast(dailyForecastData.list);
-        } catch(error){
-          setDailyForecast({ cod: 404, message: "city not found" });
-          setLoading(true);
-        }
-      } catch (error) {
-        setWeather({ cod: 404, message: "city not found" });
+          const dailyForecastData = await getWeatherByTime("Bangalore");
+          setDailyForecast(dailyForecastData.list);
+      } catch(error){
+        setDailyForecast({ cod: 404, message: "city not found" });
         setLoading(true);
       }
-    }
-  };
+      } catch (error) {
+        setWeather({ cod: 404, message: "city not found" });
+        setLoading(false);
+      }
+    };
+    
 
-  const weatherConditions = () => {
-    if (
-      typeof weather.main !== "undefined" &&
-      typeof weather.visibility !== "undefined" &&
-      typeof weather.weather !== "undefined" &&
-      weather.weather.length > 0
-    ) {
-      if (
-        weather.weather[0]?.main === "Rain" ||
-        weather.weather[0]?.main === "Mist" ||
-        weather.weather[0]?.main === "Drizzle" ||
-        weather.weather[0]?.main === "Thunderstorm"
-      ) {
-        return "app-rain";
-      } else {
-        const currentHour = new Date().getHours();
-        if (currentHour >= 6 && currentHour < 18) {
-          return "app-warm";
-        } else {
-          return "app";
+    const search = async (evt) => {
+      if (evt.key === "Enter") {
+        if (query.trim() === "") {
+          alert("Please enter a city.");
+          return;
+        }
+        try {
+          const result = await getWeatherByCity(query);
+          setWeather(result);
+          setQuery("");
+          try {
+              const dailyForecastData = await getWeatherByTime(query);
+              setDailyForecast(dailyForecastData.list);
+          } catch(error){
+            setDailyForecast({ cod: 404, message: "city not found" });
+            setLoading(true);
+          }
+        } catch (error) {
+          setWeather({ cod: 404, message: "city not found" });
+          setLoading(true);
         }
       }
-    }
-    return "app";
-  };
+    };
 
-  const weatherType = () => {
-    if (
-      typeof weather.main !== "undefined" &&
-      typeof weather.visibility !== "undefined" &&
-      Array.isArray(weather.weather) &&
-      weather.weather.length > 0
-    ) {
-      const mainWeather = weather.weather[0]?.main;
+    const weatherConditions = () => {
+      if (
+        typeof weather.main !== "undefined" &&
+        typeof weather.visibility !== "undefined" &&
+        typeof weather.weather !== "undefined" &&
+        weather.weather.length > 0
+      ) {
+        if (
+          weather.weather[0]?.main === "Rain" ||
+          weather.weather[0]?.main === "Mist" ||
+          weather.weather[0]?.main === "Drizzle" ||
+          weather.weather[0]?.main === "Thunderstorm"
+        ) {
+          return "app-rain";
+        } else {
+          const currentHour = new Date().getHours();
+          if (currentHour >= 6 && currentHour < 18) {
+            return "app-warm";
+          } else {
+            return "app";
+          }
+        }
+      }
+      return "app";
+    };
 
-      const weatherIcons = {
-        Rain: rainicon,
-        Clouds: cloudy,
-        Haze: haze,
-        Mist: mist,
-        Sunny: sunny,
-        Drizzle: rainicon,
-        Smoke: cloudy,
-        Thunderstorm: rainicon,
-      };
+    const weatherType = () => {
+      if (
+        typeof weather.main !== "undefined" &&
+        typeof weather.visibility !== "undefined" &&
+        Array.isArray(weather.weather) &&
+        weather.weather.length > 0
+      ) {
+        const mainWeather = weather.weather[0]?.main;
 
-      return weatherIcons[mainWeather] || haze;
-    }
+        const weatherIcons = {
+          Rain: rainicon,
+          Clouds: cloudy,
+          Haze: haze,
+          Mist: mist,
+          Sunny: sunny,
+          Drizzle: rainicon,
+          Smoke: cloudy,
+          Thunderstorm: rainicon,
+        };
 
-    return haze;
-  };
+        return weatherIcons[mainWeather] || haze;
+      }
 
-  const loadError = () => {
-    if (
-      typeof weather.cod !== "undefined" &&
-      weather.cod === "404" &&
-      weather.message === "city not found"
-    ) {
-      return <Error />;
-    } else if (weather === null) {
-    }
-    return null;
-  };
+      return haze;
+    };
+
+    const loadError = () => {
+      if (
+        typeof weather.cod !== "undefined" &&
+        weather.cod === "404" &&
+        weather.message === "city not found"
+      ) {
+        return <Error />;
+      } else if (weather === null) {  
+      }
+      return null;
+    };
 
   return (
     <div className="main-app">
@@ -197,7 +171,6 @@ function App() {
             SkyCast
           </div>
         </div>
-        {/*  rel="noopener noreferrer" ----->attributes are important for security and performance reason */}
       </div>
       <div className={weatherConditions()}>
         <div className="main-container">
@@ -240,7 +213,6 @@ function App() {
                   onKeyDown={search}
                 />
               </div>
-              {/* { loadError() || typeof weather.main === "undefined" ? (<Shimmer />) : ( */}
               {loading ? (
                 <Shimmer />
               ) : (
@@ -280,7 +252,6 @@ function App() {
                                 {weather.main?.humidity} %
                               </div>
                             </div>
-                            {/* <div className="vertical-line"></div> */}
                             <div className="parameter-container">
                               <img
                                 className="title-img"
@@ -303,17 +274,6 @@ function App() {
                                 {weather.visibility} ml
                               </div>
                             </div>
-                            {/* <div className="parameter-container">
-                              <img
-                                className="title-img"
-                                alt="weather"
-                                src={pressure}
-                              />
-                              <div className="title">Pressure</div>
-                              <div className="parameter-data">
-                                {weather.main?.pressure} hPa
-                              </div>
-                            </div> */}
                           </div>
                         </div>
                       </div>

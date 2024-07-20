@@ -1,6 +1,6 @@
 const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
-
 const baseUrl = "https://api.openweathermap.org/data/2.5/";
+
 
 export const getWeatherCoordinates = async (latitude, longitude) => {
   try {
@@ -29,7 +29,6 @@ export const getWeatherByTime = async (city) => {
   }
 };
 
-// api.openweathermap.org/data/2.5/forecast/daily?q={city name}&cnt={cnt}&appid={API key}
 export const getDailyweather= async (latitude,longitude) => {
   try {
     const response = await fetch(`${baseUrl}forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}`);

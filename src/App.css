@@ -67,13 +67,6 @@
   justify-content: space-between;
   margin: auto;
 }
-.datewise-data{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  margin: auto;
-}
 .w-time,.w-date{
   font-size: small;
   font-weight: lighter;
@@ -104,7 +97,7 @@
 }
 .locationbody{
   height: 5vh; 
-  width: 3vw;
+  width: 2.8vw;
   margin:0% 1% ;
   background-color: transparent;
   background: none;
@@ -116,7 +109,7 @@
   display: flex;
   flex-direction: row;
   font-size: 1rem;
-  justify-content: space space-around;
+  justify-content: space-around;
 }
 .india-text{
   color:  rgba(235, 228, 228, 0.842);
@@ -149,7 +142,6 @@
   position: sticky;
   display: flex;
   margin-top: 4vh;
-  /* margin-left: 3vw; */
 
 }
 .search-icon {
@@ -203,7 +195,11 @@ main{
   font-weight: bold;
   color:  rgba(235, 228, 228, 0.842);
   text-decoration: none;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  text-align: center;
+  margin: auto;
 }
 .location{
   color: rgba(255, 250, 250, 0.963);
@@ -215,7 +211,7 @@ main{
   font-style:normal;
   font-weight:500;
   font-size: 2.8vw; 
-  margin: 2% auto; 
+  margin: 4% auto; 
 }
 .shimmer-container{
   display: 'flex'; 
@@ -233,10 +229,8 @@ main{
   margin: 0.8% 4%;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
-
   color: #FFF;
   font-weight: 900;
-
   text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
   text-align: center;
   box-shadow: 6px 6px rgba(0, 0, 0, 0.2);
@@ -257,9 +251,10 @@ main{
   perspective: 1000px;
   padding: 1.2% 0%;
 }
-.linkedIn{
+.linkedin{
   font-size: medium;
   font-style:italic ;
+  color: #408eb3;
 }
 .last-section-header{
   justify-content: space-between;
@@ -349,29 +344,12 @@ main{
   margin: 0% 0%;
   box-shadow: 6px 6px rgba(128, 125, 125, 0.08);
 }
-.setting {
-  background-color: hsl(0, 1%, 16%);
-  width: 4vw;
-  height: 8vh;
-  margin-right: 7%;
-  padding: 0% 3%;
-}
-.img{
-  height: 6vh; /* Adjusted height for consistency */
-  width: 4vw; /* Adjusted width for consistency */
-  background: none;
-  border: none;
-  justify-content: center; /* Centers content horizontally */
-  display: flex;
-}
-
 .nav-items{
   display: flex;
   position:fixed;
   z-index: 1000;
   width: 100%;
   justify-content:space-between;
-  /* margin: 0% 32%; */
   font-family:monospace;
   font-style: italic;
   background-color: #090000;
@@ -380,9 +358,6 @@ main{
   height: 8vh;
   margin: 0% 0%;
   box-shadow: 6px 6px rgba(128, 125, 125, 0.08);
-}
-.linkedin{
-  color: #5c99b8;
 }
 .vertical-line {
   width: 0.1vw; 
@@ -409,11 +384,16 @@ main{
 
 @media only screen and (max-device-width: 480px) and (max-height: 950px) {
   .app{
-    background-image: url("./assests/winternew.jpg");
-    background-size:cover;
-    transition: background-image 0.5s ease-in-out;
     background-position:center;
-    height: 130vh;
+    height: 140vh;
+  }
+  .app-warm{
+    background-position:center;
+    height: 140vh;
+  }
+  .app-rain{
+    background-position:center;
+    height: 140vh;
   }
   .sub-main{
     display: flex;
@@ -423,29 +403,12 @@ main{
     align-items: center;
     width:100vw;
   }
-  .shimmer-container{
-     display: 'flex'; 
+  .shimmer-container{ 
      text-align: center;
-     justify-content: 'center';
      flex-direction: column;
-     align-items: 'center';
      height: 46vh;
      margin: 0%;
 
-  }
-  .app-warm{
-      background-image: url("./assests/summer.jpg");
-      background-size: cover;
-      transition: background-image 0.5s ease-in-out;
-      background-position:right;
-      height: 130vh;
-  }
-  .app-rain{
-      background-image: url("./assests/rainimage.jpg");
-      background-size:cover;
-      transition: background-image 0.5s ease-in-out;
-      background-position:center;
-       height: 130vh;
   }
   .nav-items > ul {
     display: flex;
@@ -455,76 +418,40 @@ main{
     justify-content: flex-end;
     color: #FFF;
     margin: 4% 8%;
-  
   }
-  
   .nav-items > ul > li {
     display: flex;
     justify-content: flex-end;
     margin: 2% 6%;
   }
   .nav-items{
-    display: flex;
-    position:sticky;
-    justify-content:space-between;
-    /* margin: 0% 32%; */
-    font-family:monospace;
-    font-style: italic;
-    background-color: #090000;
-    max-width: 100%;
-    max-height: 100%;
     height: 6vh;
-    margin: 0% 0%;
   }
   .logo{
     height: 4vh;
     width: 8vw;
-    margin: 20% 40%;
-    justify-content: center;
-    border-radius: 50%;
-    background:none;
-    opacity: 80%;
   }
   main {
-    /* background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.75)); */
     background-image: linear-gradient(to bottom, rgba(62, 60, 60, 0.077), rgba(0, 0, 0, 0.75));
     border-radius: 40px;
-    width: 90%; /* Adjust width as needed */
-    max-width: 100%; /* Set a maximum width for larger screens */
+    width: 90%; 
+    max-width: 100%;
     max-height: 80%;
     height: max-content;
-    display: flex; /* Ensure children can be centered */
+    display: flex; 
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0% 0%;
-    box-sizing: border-box; /* Ensure padding is included in width and height */
+    box-sizing: border-box; 
     text-align: center;
   }
   .header {
-    display: flex;
-    justify-content: space-between;
     width: 80vw;
-    position: absolute;
-    top: 0; /* Stick it to the top of the viewport */
-    width: 90%; /* Make it span the entire width of the viewport */
-    z-index: 1000;
-    padding: 10% 0%;
-    
+    width: 90%;  
   }
-  .header-left{
-    display: flex;
-  }
-  .datetime{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    margin: auto;
-  }
-  .datetime-img, .location-img {
-    border-radius: 20%; 
+  .datetime-img {
     justify-content: space-around;
-    background-color: transparent;
   }
   .datetime-img{
     width: 6.6vw;
@@ -535,92 +462,58 @@ main{
     height: 4vh; 
   }
   .date{
-    font-style: italic;
     font-size: 1rem;
-    color: rgba(235, 228, 228, 0.842);
   }
   .time{
     font-size: 1rem;
-    color: rgba(235, 228, 228, 0.842);
-    font-weight: bold;
     display: flex;
-    
-  }
-  .header-right{
-    display:flex;
   }
   .locate{
-    display: flex;
-    flex-direction: row;
     font-size: 1rem;
-    justify-content: space-around;
   }
   .india-text{
-    color:  rgba(235, 228, 228, 0.842);
-    font-style:oblique;
-    font-weight:normal;
     font-size: 1rem;
   }
   .search-bar {
     position: relative;
-    top: 8vh; /* Adjust top position to create a 10% gap from the top */ /* Center horizontally */
-    /* left: 21%; */
+    top: 4vh; 
     display: flex;
     justify-content: center;
     text-align: center;
     align-items: center;
-    margin-top: 4vh;
-    margin-bottom: 10vh; /* Adjust margin to maintain gap from the div below */
-    width: 58vw; /* Set the width to control its size */
-    max-width: 90%; /* Limit maximum width */
-    z-index: 1000; /* Ensure it's above other content */
+    margin-bottom: 4vh; 
+    width: 58vw; 
+    max-width: 90%; 
   }
- 
   .search-input{
     height: 3.6vh;
     width: 58vw; 
-    max-width: 100%;
-    font-family:'Times New Roman', Times, serif;
-    display: grid;
     font-weight: bold;
     font-size: 0.92rem;;
     border-radius: 0px 0px 10px 10px;
-    appearance: none;
-    opacity: 70%;
     box-shadow: 2px 2px rgba(240, 239, 239, 0.407);
-    background-image: url('./assests/searchicon.png'); 
-    background-repeat: no-repeat;
-    background-position: right 3% center; 
     background-size: 12%; 
-    transition: opacity 0.2s ease;
     position: relative;
   } 
-
   .data{
     position: sticky;
   }
   .location{
-    color: rgb(255, 253, 253);
-    text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-style:normal;
     font-size: 1.6rem; 
     text-align: center;
     font-weight: 400;
     margin: 6% auto; 
   }
+  .header {
+    padding-top: 5vh;
+  }
   .temp{
     margin: 4.8% 4%;
-    text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
     box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
     font-size: 3.6rem; 
     text-decoration: none;
   }
   .main-box{
-    display:flex;
     justify-content:flex-start;
     gap: 3%;
     margin: 10% 2%;
@@ -630,15 +523,7 @@ main{
   .weather-container{
     height: 15vh;
     width: 22vw; 
-    text-align: center;
-    justify-content:space-around;
-    position: relative;
-    display: flex;
-    flex-direction: column;
     margin:4% 0%;
-    background-color: black;
-    box-shadow: 4px 1px rgb(65, 63, 63);
-    perspective: 1000px;
     padding: 1.2% 0%;
   }
   .weather-title{
@@ -649,193 +534,99 @@ main{
     width: 14vw;
     box-shadow: 1px 0.8px 4px rgb(173, 169, 169);
     margin-top: 2%;
-  
   }
   .main-data{
     font-size: 1rem;
-    font-family:'Times New Roman', Times, serif;
-    font-weight: bold;
-    color:  rgba(235, 228, 228, 0.842);
-    justify-content: center;
   }
   .vertical-line {
     width: 0.2vw; 
-    background-color: #dcd5d5; 
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 1.2); 
     height: 10vh; 
-    margin: 2.8% 6%; 
   }
   .other-parameters{
     margin: 8% 0%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     width: 36vw;
-    height: 6vh;
   }
   .last-section-header{
     justify-content: space-around;
     position: relative;
-    align-items:self-end;
-    flex-direction: row;
-    display: flex;
+    align-items: self-end;
     width: 58vw;
     margin: 0% 5%;
   }
-  /* .last-section{
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    display: flex;
-  } */
   .logo-container{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
     width: 5vw;
-    margin: 1% 0%;
   }
   .title{
-    color:  rgba(235, 228, 228, 0.842);
     font-size: 0.84rem;
-    font-family: 'Times New Roman', Times, serif;
-    padding: 8% 0%;
     column-gap: 2%;
   }
   .title-img{
   height: 4.4vh;
   width: 6.8vw;
   padding: 12%;
-  opacity:70%;
+    opacity:70%;
+  }
+  .parameter-data{
+    font-size: 0.8rem;
+    text-decoration: none;
+  }
+  .main-header{
+    display: flex;
+    position:sticky;
+    justify-content: center;
+    text-align: center;
+    font-family:monospace;
+    font-style: italic;
+    background-color: #e6dcdc54;
+    max-width: 100%;
+    margin: 0% 0%;
+  }
+  .linkedin{
+    font-size: 0.6rem;
+  }
+  .main-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: max-content;
+    width: 100vw;
+    padding: 10% 0%;
+  }
+  .error-text{
+    font-size: 1rem;
+    margin: 46.8% 8%;
+    max-height: 58vh;
+  }
+  .w-icon{
+    width: 8vw;
+    height: 5vh;
+  }
+  .title-forecast{
+    font-size: small;
+    word-spacing: 2vw;
+  }
+  .w-time{
+    width: min-content;
+  }
+  .w-date{
+    width: 8vw;
+  }
+  .locationbody{
+    height: 2.8vh; 
+    width: 5vw;
+    margin: 0% 1.6%;
+  }
+}
 
-}
-.parameter-data{
-  font-size: 0.8rem;
-  font-family: 'Times New Roman', Times, serif;
-  font-weight: bold;
-  color:  rgba(235, 228, 228, 0.842);
-  text-decoration: none;
-  justify-content: center;
-}
-.main-header{
-  display: flex;
-  position:sticky;
-  justify-content: center;
-  text-align: center;
-  /* margin: 0% 32%; */
-  font-family:monospace;
-  font-style: italic;
-  background-color: #e6dcdc54;
-  max-width: 100%;
-  margin: 0% 0%;
-}
-.footer{
-  display: flex;
-  position: sticky;
-  justify-content: center;
-  text-align: center;
-  /* margin: 0% 32%; */
-  font-family:monospace;
-  font-style: italic;
-  background-color: #080505;
-  max-width: 100%;
-}
-.footer.linkedin{
-  font-size: 0.4rem;
-  font-style:italic ;
-  color: #063e5a;
-}
-.main-container{
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: max-content;
-  width: 100vw;
-  padding: 10% 0%;
-}
 
-.error-text{
-  font-size: 1rem;
-  font-family: 'Times New Roman', Times, serif;
-  font-weight: lighter;
-  color: #dad0d0;
-  text-align: center;
-  margin: 46.8% 8%;
-  max-height: 58vh;
-
-}
-.setting{
-  background-color: hsl(0, 1%, 16%);
-  padding: 3% 0%;
-  width: 9vw;
-}
-.img{
-  height: 5vh; /* Adjusted height for consistency */
-  width: 3vw; /* Adjusted width for consistency */
-  background: none;
-  border: none;
-  justify-content: center; /* Centers content horizontally */
-  display: flex;
-}
-.datewise-data{
-  font-size: 0.9rem;
-  font-family: 'Times New Roman', Times, serif;
-  font-weight: bold;
-  color:  rgba(235, 228, 228, 0.842);
-  text-decoration: none;
-  justify-content: center;
-}
-.w-icon{
-  width: 8vw;
-  height: 5vh;
-  display: flex;
-  justify-content: center;
-  margin: auto;
-}
-.title-forecast{
-  font-size: small;
-  text-transform: uppercase;
-  color: white;
-  margin: auto;
-  word-spacing: 2vw;
-}
-.w-time{
-  font-size: small;
-  font-weight: lighter;
-  display: flex;
-  width: min-content;
-  justify-content: center;
-}
-.w-date{
-  font-size: small;
-  font-weight: lighter;
-  display: flex;
-  justify-content: center;
-  width: 8vw;
-}
-.locationbody{
-  height: 2.8vh; 
-  width: 5vw;
-  margin: 0% 1.6%;
-}
-}
 @media only screen and (max-device-width: 400px) and (max-height: 900px){
   .w-date{
-    font-size: small;
-    font-weight: lighter;
-    display: flex;
     width: 10vw;
-    justify-content: center;
   }
   .parameter-data{
     font-size: 0.7rem;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
-    color:  rgba(235, 228, 228, 0.842);
     text-decoration: none;
-    justify-content: center;
   }
   .locationbody{
     height: 3.2vh; 
@@ -843,7 +634,6 @@ main{
     margin: 0% 1.6%;
   }
   .main-box{
-    display:flex;
     justify-content:flex-start;
     gap: 3%;
     margin: 10% 2%;
@@ -851,101 +641,92 @@ main{
     width: 88vw;
   }
 }
+
+
+
 @media only screen and (min-device-width:480px) and (max-device-width: 1024px){
-  .logo{
-    height: 4vh;
-    width: 14vw;
-    margin: 20% 40%;
-    justify-content: center;
-    border-radius: 50%;
-    background:none;
-    opacity: 80%;
-  }
-  .locationbody{
-    height: 4vh; 
-    width: 4.6vw;
-    margin: 0% 1.6%;
-  }
-  .weather-container{
-    width: 16vw;
-  }
-  .weather-title-img{
-    width: 10vw;
-  }
-  .main-box{
-    display:flex;
-    justify-content:flex-start;
-    gap: 18%;
-    margin: 6% 8%;
-    max-width: 100%;
-    width: 88vw;
-  }
-  .title-img{
-    width: 7.0vw;
-  }
-  .parameter-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  .w-icon{
-    width: 6vw;
-  }
-  .search-bar{
-    margin-top: 5vh;
-    margin-bottom: 4vh;
-  }
-  .location{
-    font-size: 2.4rem;
-    margin: 4% auto; 
-  }
-  .app-rain{
-    background-image: url("./assests/rainimage.jpg");
-    background-size:cover;
-    transition: background-image 0.5s ease-in-out;
-    background-position:center;
-     height: 130vh;
-}
-  .datetime-img{
-    width: 5.6vw;
-    height: 5vh; 
-  }
-  .location-img{
-    width: 5vw;
-    height: 4vh; 
-  }
-  .date{
-    font-style: italic;
-    font-size: 1rem;
-    color: rgba(235, 228, 228, 0.842);
-  }
-  .time{
-    font-size: 1rem;
-    color: rgba(235, 228, 228, 0.842);
-    font-weight: bold;
-    display: flex;
-    
-  }
-  .locate{
-    display: flex;
-    flex-direction: row;
-    font-size: 2.4rem;
-    justify-content: space-around;
-  }
-  .india-text{
-    color:  rgba(235, 228, 228, 0.842);
-    font-style:oblique;
-    font-weight:normal;
-    font-size: 1rem;
-  }
-  .parameter-data{
-    font-size: 0.8rem;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
-    color:  rgba(235, 228, 228, 0.842);
-    text-decoration: none;
-    justify-content: center;
-  }
+    .logo{
+      height: 4vh;
+      width: 14vw;
+    }
+    .locationbody{
+      height: 4vh; 
+      width: 4vw;
+      margin: 0% 1.6%;
+    }
+    .weather-container{
+      width: 16vw;
+    }
+    .weather-title-img{
+      width: 10vw;
+    }
+    .main-box{
+      justify-content:flex-start;
+      gap: 18%;
+      margin: 6% 8%;
+      max-width: 100%;
+      width: 88vw;
+    }
+    .title-img{
+      width: 6.0vw;
+    }
+    .parameter-container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .w-icon{
+      width: 5vw;
+    }
+    .search-input{
+      height: 4vh;
+    }
+    .search-bar{
+      margin-top: 5vh;
+      margin-bottom: 4vh;
+    }
+    .location{
+      font-size: 2rem;
+      margin: 4% auto; 
+    }
+    .app{
+      background-position:right;
+      height: 150vh;
+    }
+    .app-rain{
+      background-position:right;
+      height: 150vh;
+    }
+    .app-warm{
+      background-position:right;
+      height: 150vh;
+    }
+    .datetime-img{
+      width: 4vw;
+      height: 5vh; 
+    }
+    .location-img{
+      width: 3vw;
+      height: 4vh; 
+    }
+    .date{
+      font-size: 1rem;
+    }
+    .time{
+      font-size: 1rem;
+      font-weight: bold;
+      display: flex;
+      
+    }
+    .locate{
+      font-size: 2.4rem;
+    }
+    .india-text{
+      font-size: 1rem;
+    }
+    .parameter-data{
+      font-size: 0.8rem;
+      text-decoration: none;
+    }
 }
