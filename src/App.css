@@ -11,7 +11,7 @@
   position: static;
   display: flex;
   justify-content: space-between;
-  padding-top: 3vh;
+  padding-top: 9vh;
 }
 .header-left{
   font-size: larger;
@@ -165,7 +165,7 @@
   align-items: center;
   flex-direction: row;
   width: 4vw;
-  margin: 1% 6%;
+  margin: 1% 0%;
 }
 .app{
   background-image: url("./assests/winternew.jpg");
@@ -367,7 +367,9 @@ main{
 
 .nav-items{
   display: flex;
-  position:sticky;
+  position:fixed;
+  z-index: 1000;
+  width: 100%;
   justify-content:space-between;
   /* margin: 0% 32%; */
   font-family:monospace;
@@ -435,7 +437,7 @@ main{
       background-image: url("./assests/summer.jpg");
       background-size: cover;
       transition: background-image 0.5s ease-in-out;
-      background-position:center;
+      background-position:right;
       height: 130vh;
   }
   .app-rain{
@@ -692,7 +694,7 @@ main{
     align-items: center;
     flex-direction: row;
     width: 5vw;
-    margin: 1% 2%;
+    margin: 1% 0%;
   }
   .title{
     color:  rgba(235, 228, 228, 0.842);
