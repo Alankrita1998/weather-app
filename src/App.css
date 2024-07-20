@@ -561,14 +561,14 @@ main{
   }
   .search-bar {
     position: relative;
-    top: 10vh; /* Adjust top position to create a 10% gap from the top */ /* Center horizontally */
+    top: 8vh; /* Adjust top position to create a 10% gap from the top */ /* Center horizontally */
     /* left: 21%; */
     display: flex;
     justify-content: center;
     text-align: center;
     align-items: center;
-    margin-top: 5vh;
-    margin-bottom: 12vh; /* Adjust margin to maintain gap from the div below */
+    margin-top: 4vh;
+    margin-bottom: 10vh; /* Adjust margin to maintain gap from the div below */
     width: 58vw; /* Set the width to control its size */
     max-width: 90%; /* Limit maximum width */
     z-index: 1000; /* Ensure it's above other content */
