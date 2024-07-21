@@ -5,7 +5,7 @@ import { TailSpin } from 'react-loader-spinner'
 const Shimmer = () => {
   return (
     <div className="shimmer-container">
-    (<TailSpin
+    <TailSpin
   visible={true}
   height="60"
   width="60"
@@ -15,7 +15,7 @@ const Shimmer = () => {
   radius="1"
   wrapperStyle={{}}
   wrapperClass=""
-  />)
+  />
     </div>
   );
 }
