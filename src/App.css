@@ -409,7 +409,7 @@ main{
      text-align: center;
      flex-direction: column;
      height: 46vh;
-     margin: 0%;
+     margin-top: 15%;
 
   }
   .nav-items > ul {
