@@ -281,14 +281,14 @@ main{
 }
 .title-img{
   height: 5.6vh;
-  width: 3.6vw;
+  width: 3.0vw;
   padding: 20% 16%;
   opacity:70%;
 
 }
 .weather-title-img{
   height: 11vh;
-  width: 8vw;
+  width: 6vw;
   box-shadow: 10px;
   transition: transform 0.5s;
   position: relative;
